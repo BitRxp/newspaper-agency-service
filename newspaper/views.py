@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+from newspaper.models import Redactor, Newspaper, Topic
+
+
+def index(request):
+    """View function for the home page of the site."""
+
+    return render(request, "newspaper/index.html")
