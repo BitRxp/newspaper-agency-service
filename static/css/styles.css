@@ -3,29 +3,53 @@ body {
     margin: 20px;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: lightslategrey;
 }
 
 /* Ensure content doesn't overlap with navbar */
 body {
     padding-top: 70px; /* Adjust this value if navbar height changes */
+    background-image: url("/static/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Container styles for better spacing */
 .container-fluid {
-    padding-left: 20px;
-    padding-right: 20px;
-
+    padding: 5px;
+    background-color: blanchedalmond;
 }
 
 /* Navbar styles */
 .navbar-brand {
     font-size: 1.5rem; /* Adjust the brand font size */
-    padding: 10px;
+    padding: 5px;
 }
 
 .navbar-nav .dropdown-menu {
     margin-top: 0; /* Adjust the dropdown menu position */
     text-align: center;
 }
+
+.container-content{
+    text-align: center;
+    margin: 25px;
+}
+.navbar {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-outline-success{
+    background-color: white;
+}
+
+.no-bullets{
+    list-style-type: none;
+
+}
+
+
+
+
 
