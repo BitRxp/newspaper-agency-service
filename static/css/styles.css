@@ -1,0 +1,31 @@
+/* General body styles */
+body {
+    margin: 20px;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: lightslategrey;
+}
+
+/* Ensure content doesn't overlap with navbar */
+body {
+    padding-top: 70px; /* Adjust this value if navbar height changes */
+}
+
+/* Container styles for better spacing */
+.container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+/* Navbar styles */
+.navbar-brand {
+    font-size: 1.5rem; /* Adjust the brand font size */
+    padding: 10px;
+}
+
+.navbar-nav .dropdown-menu {
+    margin-top: 0; /* Adjust the dropdown menu position */
+    text-align: center;
+}
+
