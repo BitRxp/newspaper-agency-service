@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "newspaper",
+    "crispy_forms",
+    "crispy_bootstrap4",
 ]
 
 MIDDLEWARE = [
@@ -67,6 +69,8 @@ TEMPLATES = [
         },
     },
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 WSGI_APPLICATION = "newspaper_agency_service.wsgi.application"
 
@@ -127,3 +131,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 AUTH_USER_MODEL = "newspaper.Redactor"
+
+LOGIN_REDIRECT_URL = "/"
