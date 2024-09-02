@@ -1,24 +1,42 @@
 {% extends "base.html" %}
-{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header text-white text-center" style="background-color: #6f42c1;">
+                    <h2>Login</h2>
+                </div>
+                <div class="card-body">
+                    {% if form.errors %}
+                        <div class="alert alert-danger" role="alert">
+                            Your username and password didn't match. Please try again.
+                        </div>
+                    {% endif %}
+                    
+                    {% if next %}
+                        <div class="alert alert-info" role="alert">
+                            Please login to see this page.
+                        </div>
+                    {% endif %}
 
-{% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+                    <form method="post" action="{% url "login" %}">
+                        {% csrf_token %}
+                        {{ form|crispy }}
 
-<h1>Login</h1>
-
-{% if next %}
-  <p>Please login to see this page.</p>
-{% endif %}
-
-<form method="post" action="{% url 'login' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
-
-  <input type="submit" value="Login" class="btn btn-primary" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
-
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-block text-white" style="background-color: #6f42c1;">Login</button>
+                        </div>
+                        <input type="hidden" name="next" value="{{ next }}" />
+                    </form>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <a href="{% url 'password_reset' %}" class="text-muted">Forgot your password?</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -7,33 +7,34 @@ body {
 
 /* Ensure content doesn't overlap with navbar */
 body {
-    padding-top: 70px; /* Adjust this value if navbar height changes */
+    padding-top: 70px;
     background-image: url("/static/images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
 }
 
 /* Container styles for better spacing */
 .container-fluid {
     padding: 5px;
-    background-color: blanchedalmond;
+    background-color: #c7ccff;
 }
 
 /* Navbar styles */
 .navbar-brand {
-    font-size: 1.5rem; /* Adjust the brand font size */
+    font-size: 1.5rem;
     padding: 5px;
 }
 
 .navbar-nav .dropdown-menu {
-    margin-top: 0; /* Adjust the dropdown menu position */
+    margin-top: 0;
     text-align: center;
 }
 
 .container-content{
     text-align: center;
     margin: 25px;
+    color: white;
 }
 .navbar {
     margin: 0;
@@ -48,6 +49,8 @@ body {
     list-style-type: none;
 
 }
+
+
 
 
 
