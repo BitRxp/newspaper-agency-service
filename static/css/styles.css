@@ -1,58 +1,147 @@
 /* General body styles */
 body {
-    margin: 20px;
-    padding: 0;
     font-family: Arial, sans-serif;
-}
-
-/* Ensure content doesn't overlap with navbar */
-body {
     padding-top: 70px;
-    background-image: url("/static/images/background.jpg");
+    background-image: url("/static/images/background.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
+    color: #2C3E50;
 }
 
-/* Container styles for better spacing */
-.container-fluid {
-    padding: 5px;
-    background-color: #c7ccff;
+/* Sidebar Styles */
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #34495E;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #2C3E50;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Navbar styles */
-.navbar-brand {
-    font-size: 1.5rem;
-    padding: 5px;
+#sidebar header {
+  background-color: #263238;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
 }
 
-.navbar-nav .dropdown-menu {
-    margin-top: 0;
-    text-align: center;
+#sidebar header a {
+  color: #ECF0F1;
+  display: block;
+  text-decoration: none;
 }
 
-.container-content{
-    text-align: center;
-    margin: 25px;
-    color: white;
-}
-.navbar {
-    margin: 0;
-    padding: 0;
+#sidebar header a:hover {
+  color: #FFFFFF;
 }
 
-.btn-outline-success{
-    background-color: white;
+#sidebar .nav {
+  padding-left: 0;
+  list-style-type: none;
+  margin-top: 20px;
+  flex-grow: 1; /* This ensures the nav takes up available space */
 }
 
-.no-bullets{
-    list-style-type: none;
-
+#sidebar .nav li {
+  width: 100%;
 }
 
+#sidebar .nav a,
+#sidebar .nav button {
+  background: none;
+  border-bottom: 1px solid #455A64;
+  color: #ECF0F1;
+  font-size: 14px;
+  padding: 16px 24px;
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  text-align: left;
+  transition: color 0.3s, background-color 0.3s;
+}
 
+#sidebar .nav a:hover,
+#sidebar .nav button:hover {
+  background: #2C3E50;
+  color: #FFFFFF;
+}
 
+#sidebar .nav button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
 
+/* Content Container */
+.container-content {
+    color: #2C3E50;
+    margin-left: 260px;
+    padding: 25px;
+    min-height: 100vh;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
 
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    color: #34495E;
+    font-weight: 700;
+}
 
+/* Links in content */
+.container-content a {
+    color: #2980B9;
+    text-decoration: none;
+    border-bottom: 1px solid #2980B9;
+}
 
+.container-content a:hover {
+    text-decoration: underline;
+    color: #1F618D;
+}
+
+/* Section separation */
+.container-content hr {
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Grid container (example class) */
+.d-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Centering the login form for unauthorized users */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 0;
+}
+
+/* Indentation for content if there is a sidebar */
+.user-authenticated .container-content {
+    margin-left: 260px;
+    padding: 25px;
+    min-height: 100vh;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+/* Content without a sidebar */
+body:not(.user-authenticated) .container-content {
+    margin-left: 0;
+    padding: 20px;
+}
