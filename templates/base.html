@@ -10,10 +10,10 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-<body>
+<body class="{% if user.is_authenticated %}user-authenticated{% endif %}"
     <div>
             {% block navbar %}
-                {% include "includes/navbar.html" %}
+                {% include "includes/sidebar.html" %}
             {% endblock %}
 
         </div>
