@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.urls import reverse
 
 
 class Topic(models.Model):
@@ -15,6 +16,9 @@ class Redactor(AbstractUser):
 
     class Meta:
         ordering = ("username", )
+
+    def get_absolute_url(self):
+        return reverse("newspaper:redactor-detail", args=[str(self.pk)])
 
 
 class Newspaper(models.Model):

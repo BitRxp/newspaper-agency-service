@@ -37,3 +37,8 @@ class RedactorCreateView(LoginRequiredMixin, generic.CreateView):
     model = Redactor
     success_url = reverse_lazy("newspaper:redactor-list")
     form_class = RedactorCreateForm
+
+
+class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Redactor
+    queryset = Redactor.objects.all().prefetch_related("newspapers__topics")
