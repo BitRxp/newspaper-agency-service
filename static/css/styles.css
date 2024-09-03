@@ -1,6 +1,6 @@
 /* General body styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 70px;
     background-image: url("/static/images/background.jpeg");
     background-size: cover;
@@ -17,19 +17,19 @@ body {
   left: 0;
   width: 250px;
   height: 100%;
-  background: #34495E;
+  background: #2C3E50;
   overflow-y: auto;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #2C3E50;
+  border-right: 1px solid #1A242F;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 #sidebar header {
-  background-color: #263238;
-  font-size: 20px;
-  line-height: 52px;
+  background-color: #1A242F;
+  font-size: 22px;
+  line-height: 60px;
   text-align: center;
 }
 
@@ -37,6 +37,7 @@ body {
   color: #ECF0F1;
   display: block;
   text-decoration: none;
+  font-weight: bold;
 }
 
 #sidebar header a:hover {
@@ -51,16 +52,16 @@ body {
 
 #sidebar .nav li {
   width: 100%;
-  margin-bottom: 10px; /* Adjust this value as needed */
+  margin-bottom: 10px;
 }
 
 #sidebar .nav a,
 #sidebar .nav button {
   background: none;
-  border-bottom: 1px solid #455A64;
+  border-bottom: 1px solid #34495E;
   color: #ECF0F1;
-  font-size: 14px;
-  padding: 16px 24px;
+  font-size: 16px;
+  padding: 18px 26px;
   display: block;
   text-decoration: none;
   width: 100%;
@@ -70,7 +71,7 @@ body {
 
 #sidebar .nav a:hover,
 #sidebar .nav button:hover {
-  background: #2C3E50;
+  background: #1A242F;
   color: #FFFFFF;
 }
 
@@ -82,7 +83,7 @@ body {
 
 /* Logout button specific styles */
 #sidebar .nav.logout-nav {
-  margin-top: 20px; /* Adjust this value to control spacing above the logout button */
+  margin-top: auto;
   padding-bottom: 20px;
 }
 
@@ -90,16 +91,17 @@ body {
 .container-content {
     color: #2C3E50;
     margin-left: 260px;
-    padding: 25px;
+    padding: 30px;
     min-height: 100vh;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* Headings */
 h1, h2, h3 {
     font-family: 'Merriweather', serif;
-    color: #34495E;
+    color: #2C3E50;
     font-weight: 700;
 }
 
@@ -108,11 +110,13 @@ h1, h2, h3 {
     color: #2980B9;
     text-decoration: none;
     border-bottom: 1px solid #2980B9;
+    transition: color 0.3s, border-color 0.3s;
 }
 
 .container-content a:hover {
     text-decoration: underline;
     color: #1F618D;
+    border-color: #1F618D;
 }
 
 /* Section separation */
@@ -140,9 +144,9 @@ h1, h2, h3 {
 /* Indentation for content if there is a sidebar */
 .user-authenticated .container-content {
     margin-left: 260px;
-    padding: 25px;
+    padding: 30px;
     min-height: 100vh;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 8px;
 }
 
@@ -150,4 +154,54 @@ h1, h2, h3 {
 body:not(.user-authenticated) .container-content {
     margin-left: 0;
     padding: 20px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 200px;
+    }
+
+    .container-content {
+        margin-left: 210px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    #sidebar {
+        width: 180px;
+    }
+
+    .container-content {
+        margin-left: 190px;
+        padding: 20px;
+    }
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #2980B9;
+    color: white !important; /* Force the text color to be white */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px 24px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #34495E; /* Button background color on hover */
+    color: white !important; /* Ensure text color stays white on hover */
+}
+
+/* "Me" Label Styling */
+.badge-info {
+    background-color: #2980B9; /* Background color for "Me" badge */
+    color: white; /* Text color for "Me" badge */
+    font-size: 0.8em; /* Adjust font size for better readability */
+    padding: 2px 2px; /* Padding for the badge */
+    border-radius: 6px; /* Rounded corners */
 }
