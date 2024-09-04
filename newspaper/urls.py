@@ -4,7 +4,8 @@ from .views import (
     index,
     RedactorListView,
     RedactorCreateView,
-    RedactorDetailView
+    RedactorDetailView,
+    RedactorsDeleteView
 )
 
 
@@ -15,6 +16,10 @@ urlpatterns = [
     path(
         "redactors/<int:pk>/", RedactorDetailView.as_view(), name="redactor-detail"
     ),
+    path("redactors/<int:pk>/delete/",
+         RedactorsDeleteView.as_view(),
+         name="redactor-delete"
+         ),
 ]
 
 

@@ -1,13 +1,13 @@
 {% if user.is_authenticated %}
 <div id="sidebar">
     <header>
-      <a href="{% url 'newspaper:index' %}">Newspaper System</a>
+      <a href="{% url "newspaper:index" %}">Newspaper System</a>
     </header>
     <ul class="nav">
+      <li><a href="{% url "newspaper:index" %}">Home</a></li>
       <li><a href="#">Newspapers</a></li>
       <li><a href="{% url "newspaper:redactor-list" %}">Redactors</a></li>
       <li><a href="#">Topics</a></li>
-      <li><a href="#">Contact</a></li>
     </ul>
 
     <!-- User Authentication Links -->

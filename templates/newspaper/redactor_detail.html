@@ -1,30 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>
-    Username: {{ redactor.username }}
-    <a href="#">
-      Delete
-    </a>
-  </h1>
+  <div class="redactor-info-container">
+    <h1 class="username-title">
+      Username: {{ redactor.username }}
+      <a href="{% url "newspaper:redactor-delete" pk=redactor.id %}" class="delete-link">
+        Delete
+      </a>
+    </h1>
 
-  <p><strong>First name:</strong> {{ redactor.first_name }}</p>
-  <p><strong>Last name:</strong> {{ redactor.last_name }}</p>
-  <p><strong>License number:</strong> {{ redactor.years_of_experience }} <a
-      href="#">Update</a></p>
-  <p><strong>Is staff:</strong> {{ redactor.is_staff }}</p>
+    <div class="redactor-details">
+      <p><strong>First name:</strong> {{ redactor.first_name }}</p>
+      <p><strong>Last name:</strong> {{ redactor.last_name }}</p>
+      <p><strong>Years of experience:</strong> {{ redactor.years_of_experience }} 
+         <a href="#" class="update-link">Update</a>
+      </p>
+    </div>
 
-  <div class="ml-3">
-    <h4>Newspapers</h4>
+    <div class="newspapers-section">
+      <h4>Newspapers</h4>
 
-    {% for newspaper in redactor.newspaper.all %}
-        <hr>
-        <p><strong>Title:</strong> {{ newspaper.title }}</p>
-        <p><strong>Topic:</strong> {{ newspaper.topic.name }}</p>
-        <p class="text-muted"><strong>Id:</strong> {{newspaper.id}}</p>
-
-    {% empty %}
-      <p>No newspaper!</p>
-    {% endfor %}
+      {% if redactor.newspaper.all %}
+        <ul class="newspaper-list">
+          {% for newspaper in redactor.newspaper.all %}
+            <li class="newspaper-item">
+              <hr>
+              <p><strong>Title:</strong> {{ newspaper.title }}</p>
+              <p><strong>Topic:</strong> {{ newspaper.topic.name }}</p>
+              <p class="text-muted"><strong>Id:</strong> {{ newspaper.id }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="no-newspaper-msg">No newspaper!</p>
+      {% endif %}
+    </div>
   </div>
 {% endblock %}

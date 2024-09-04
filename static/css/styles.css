@@ -7,6 +7,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     color: #2C3E50;
+    font-family: 'Merriweather', serif;
 }
 
 /* Sidebar Styles */
@@ -93,14 +94,15 @@ body {
     margin-left: 260px;
     padding: 30px;
     min-height: 100vh;
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px); /* Smooths the background appearance */
 }
 
 /* Headings */
 h1, h2, h3 {
-    font-family: 'Merriweather', serif;
+    font-family: "Merriweather", serif;
     color: #2C3E50;
     font-weight: 700;
 }
@@ -125,35 +127,83 @@ h1, h2, h3 {
     margin: 20px 0;
 }
 
-/* Grid container (example class) */
+/* Redactor Info and Newspaper Styling */
+.redactor-info-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.username-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2em;
+}
+
+.username-title .delete-link {
+    color: #E74C3C;
+    font-size: 0.8em;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.username-title .delete-link:hover {
+    border-color: #E74C3C;
+}
+
+.redactor-details p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.redactor-details .update-link {
+    font-size: 0.9em;
+    color: #2980B9;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.redactor-details .update-link:hover {
+    border-color: #2980B9;
+}
+
+.newspapers-section {
+    margin-top: 30px;
+}
+
+.newspapers-section h4 {
+    font-size: 1.5em;
+    color: #34495E;
+    margin-bottom: 15px;
+}
+
+.newspaper-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.newspaper-item {
+    margin-bottom: 20px;
+    background-color: #F7F9F9;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.no-newspaper-msg {
+    color: #E74C3C;
+    font-weight: bold;
+}
+
+/* Grid container for optional sections */
 .d-grid {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-/* Centering the login form for unauthorized users */
-.auth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-left: 0;
-}
-
-/* Indentation for content if there is a sidebar */
-.user-authenticated .container-content {
-    margin-left: 260px;
-    padding: 30px;
-    min-height: 100vh;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 8px;
-}
-
-/* Content without a sidebar */
-body:not(.user-authenticated) .container-content {
-    margin-left: 0;
-    padding: 20px;
 }
 
 /* Media queries for responsive design */
@@ -204,4 +254,61 @@ body:not(.user-authenticated) .container-content {
     font-size: 0.8em; /* Adjust font size for better readability */
     padding: 2px 2px; /* Padding for the badge */
     border-radius: 6px; /* Rounded corners */
+}
+
+/* Section Highlight Hover Effects */
+.newspaper-item:hover {
+    background-color: #ECF0F1; /* Subtle background change on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Miscellaneous styling enhancements */
+.text-muted {
+    color: #7F8C8D;
+}
+
+/* Centering the content */
+.delete-redactor-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh; /* Centers vertically */
+}
+
+/* Making the heading uppercase and larger */
+.delete-redactor-container h1 {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase; /* Makes the text uppercase */
+    color: #E74C3C; /* Optional: color for emphasis */
+    margin-bottom: 20px;
+}
+
+/* Button spacing and alignment */
+.delete-redactor-container form {
+    display: flex;
+    gap: 10px; /* Adds spacing between buttons */
+    justify-content: center;
+}
+
+/* Adjust button sizes */
+.delete-redactor-container .btn {
+    padding: 10px 20px;
+    font-size: 1.2em; /* Larger button text */
+}
+
+.btn-secondary {
+    background-color: green;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #2980b9;
 }
