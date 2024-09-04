@@ -1,4 +1,4 @@
-/* General body styles */
+/* General Body Styles */
 body {
     padding-top: 20px;
     padding-right: 10px;
@@ -12,83 +12,83 @@ body {
 
 /* Sidebar Styles */
 #sidebar {
-  z-index: 1000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  background: #2C3E50;
-  overflow-y: auto;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #1A242F;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #2C3E50;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #1A242F;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #sidebar header {
-  background-color: #1A242F;
-  font-size: 22px;
-  line-height: 60px;
-  text-align: center;
+    background-color: #1A242F;
+    font-size: 22px;
+    line-height: 60px;
+    text-align: center;
 }
 
 #sidebar header a {
-  color: #ECF0F1;
-  display: block;
-  text-decoration: none;
-  font-weight: bold;
+    color: #ECF0F1;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 #sidebar header a:hover {
-  color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 #sidebar .nav {
-  padding-left: 0;
-  list-style-type: none;
-  margin-top: 20px;
+    padding-left: 0;
+    list-style-type: none;
+    margin-top: 20px;
 }
 
 #sidebar .nav li {
-  width: 100%;
-  margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 #sidebar .nav a,
 #sidebar .nav button {
-  background: none;
-  border-bottom: 1px solid #34495E;
-  color: #ECF0F1;
-  font-size: 16px;
-  padding: 18px 26px;
-  display: block;
-  text-decoration: none;
-  width: 100%;
-  text-align: left;
-  transition: color 0.3s, background-color 0.3s;
+    background: none;
+    border-bottom: 1px solid #34495E;
+    color: #ECF0F1;
+    font-size: 16px;
+    padding: 18px 26px;
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    text-align: left;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 #sidebar .nav a:hover,
 #sidebar .nav button:hover {
-  background: #1A242F;
-  color: #FFFFFF;
+    background: #1A242F;
+    color: #FFFFFF;
 }
 
 #sidebar .nav button {
-  border: none;
-  background: none;
-  cursor: pointer;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
-/* Logout button specific styles */
+/* Logout Button Specific Styles */
 #sidebar .nav.logout-nav {
-  margin-top: auto;
-  padding-bottom: 20px;
+    margin-top: auto;
+    padding-bottom: 20px;
 }
 
-/* Content Container */
+/* Content Container Styles */
 .container-content {
     color: #2C3E50;
     margin-left: 260px;
@@ -100,14 +100,14 @@ body {
     backdrop-filter: blur(10px); /* Smooths the background appearance */
 }
 
-/* Headings */
+/* Heading Styles */
 h1, h2, h3 {
     font-family: "Merriweather", serif;
     color: #2C3E50;
     font-weight: 700;
 }
 
-/* Links in content */
+/* Link Styles in Content */
 .container-content a {
     color: #2980B9;
     text-decoration: none;
@@ -121,13 +121,13 @@ h1, h2, h3 {
     border-color: #1F618D;
 }
 
-/* Section separation */
+/* Section Separation Styles */
 .container-content hr {
     border-top: 1px solid #ddd;
     margin: 20px 0;
 }
 
-/* Redactor Info and Newspaper Styling */
+/* Redactor Info and Newspaper Section Styling */
 .redactor-info-container {
     padding: 20px;
     background-color: #fff;
@@ -199,14 +199,14 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-/* Grid container for optional sections */
+/* Grid Container for Optional Sections */
 .d-grid {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-/* Media queries for responsive design */
+/* Responsive Design Media Queries */
 @media (max-width: 768px) {
     #sidebar {
         width: 200px;
@@ -262,12 +262,12 @@ h1, h2, h3 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Miscellaneous styling enhancements */
+/* Miscellaneous Styling Enhancements */
 .text-muted {
     color: #7F8C8D;
 }
 
-/* Centering the content */
+/* Centering the Content */
 .delete-redactor-container {
     display: flex;
     flex-direction: column;
@@ -277,7 +277,7 @@ h1, h2, h3 {
     min-height: 80vh; /* Centers vertically */
 }
 
-/* Making the heading uppercase and larger */
+/* Making the Heading Uppercase and Larger */
 .delete-redactor-container h1 {
     font-size: 3em;
     font-weight: bold;
@@ -286,14 +286,14 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
-/* Button spacing and alignment */
+/* Button Spacing and Alignment */
 .delete-redactor-container form {
     display: flex;
     gap: 10px; /* Adds spacing between buttons */
     justify-content: center;
 }
 
-/* Adjust button sizes */
+/* Adjust Button Sizes */
 .delete-redactor-container .btn {
     padding: 10px 20px;
     font-size: 1.2em; /* Larger button text */

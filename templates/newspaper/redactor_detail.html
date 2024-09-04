@@ -2,32 +2,25 @@
 
 {% block content %}
   <div class="redactor-info-container">
-    <h1 class="username-title">
-      Username: {{ redactor.username }}
-      <a href="{% url "newspaper:redactor-delete" pk=redactor.id %}" class="delete-link">
-        Delete
-      </a>
-    </h1>
+    <div class="username-title">
+      <span>Username: {{ redactor.username }}</span>
+      <a href="{% url "newspaper:redactor-delete" pk=redactor.id %}" class="delete-link">Delete</a>
+    </div>
 
     <div class="redactor-details">
       <p><strong>First name:</strong> {{ redactor.first_name }}</p>
       <p><strong>Last name:</strong> {{ redactor.last_name }}</p>
-      <p><strong>Years of experience:</strong> {{ redactor.years_of_experience }} 
-         <a href="#" class="update-link">Update</a>
-      </p>
+      <p><strong>Years of experience:</strong> {{ redactor.years_of_experience }}</p>
     </div>
 
     <div class="newspapers-section">
       <h4>Newspapers</h4>
-
-      {% if redactor.newspaper.all %}
+      {% if redactor.newspapers.all %}
         <ul class="newspaper-list">
-          {% for newspaper in redactor.newspaper.all %}
+          {% for newspaper in redactor.newspapers.all %}
             <li class="newspaper-item">
-              <hr>
               <p><strong>Title:</strong> {{ newspaper.title }}</p>
               <p><strong>Topic:</strong> {{ newspaper.topic.name }}</p>
-              <p class="text-muted"><strong>Id:</strong> {{ newspaper.id }}</p>
             </li>
           {% endfor %}
         </ul>
