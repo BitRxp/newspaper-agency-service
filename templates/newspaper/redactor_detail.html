@@ -4,7 +4,10 @@
   <div class="redactor-info-container">
     <div class="username-title">
       <span>Username: {{ redactor.username }}</span>
-      <a href="{% url "newspaper:redactor-delete" pk=redactor.id %}" class="delete-link">Delete</a>
+      <div class="action-links">
+    <a href="{% url "newspaper:redactor-update" pk=redactor.id %}" class="update-link">Update</a>
+    <a href="{% url "newspaper:redactor-delete" pk=redactor.id %}" class="delete-link">Delete</a>
+  </div>
     </div>
 
     <div class="redactor-details">

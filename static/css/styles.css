@@ -137,38 +137,39 @@ h1, h2, h3 {
 
 .username-title {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Розділяє Username та посилання */
     align-items: center;
     font-size: 2em;
+    width: 100%; /* Забезпечує повне використання ширини контейнера */
 }
 
-.username-title .delete-link {
-    color: #E74C3C;
+.action-links {
+    display: flex;
+    gap: 20px; /* Додає відстань між "Update" та "Delete" */
+}
+
+.username-title .update-link,
+.username-title .delete-link  {
     font-size: 0.8em;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s;
 }
 
+.username-title .delete-link  {
+    color: #E74C3C;
+}
+
+.username-title .update-link {
+    color: #2980B9;
+}
+
+.username-title .update-link:hover {
+    border-color: #2980B9;
+}
+
 .username-title .delete-link:hover {
     border-color: #E74C3C;
-}
-
-.redactor-details p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-}
-
-.redactor-details .update-link {
-    font-size: 0.9em;
-    color: #2980B9;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s;
-}
-
-.redactor-details .update-link:hover {
-    border-color: #2980B9;
 }
 
 .newspapers-section {
@@ -342,4 +343,15 @@ h1, h2, h3 {
 body:not(.user-authenticated) .container-content {
     margin-left: 10px;
     padding: 20px;
+}
+
+/* Pagination */
+.page-item.active .page-link {
+    background-color: #2980b9;
+}
+
+/* Indentation between form fields and button */
+.update-redactor-form .submit-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
 }

@@ -16,3 +16,28 @@ class RedactorCreateForm(UserCreationForm):
             "last_name",
             "years_of_experience",
         )
+
+
+class RedactorUpdateForm(forms.ModelForm):
+    username = forms.CharField(
+        required=False,
+    )
+    first_name = forms.CharField(
+        required=False,
+    )
+    last_name = forms.CharField(
+        required=False,
+    )
+    years_of_experience = forms.IntegerField(
+        required=False,
+    )
+
+    class Meta:
+        model = Redactor
+        fields = (
+            "username",
+            "first_name",
+            "last_name",
+            "years_of_experience"
+            )
+
