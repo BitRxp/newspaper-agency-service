@@ -45,7 +45,7 @@ class RedactorCreateView(LoginRequiredMixin, generic.CreateView):
 
 class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
     model = Redactor
-    queryset = Redactor.objects.all().prefetch_related("newspapers__topics")
+    queryset = Redactor.objects.all().prefetch_related("newspapers__topic")
 
 
 class RedactorsDeleteView(LoginRequiredMixin, generic.DeleteView):
