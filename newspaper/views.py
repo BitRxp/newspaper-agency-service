@@ -60,3 +60,10 @@ class RedactorUpdateView(LoginRequiredMixin, generic.UpdateView):
             "newspaper:redactor-detail",
             kwargs={"pk": self.object.pk}
         )
+
+
+# NewspaperView
+class NewspaperListView(LoginRequiredMixin, generic.ListView):
+    model = Newspaper
+    paginate_by = 5
+    queryset = Newspaper.objects.all().select_related("topic")

@@ -5,7 +5,7 @@
     </header>
     <ul class="nav">
       <li><a href="{% url "newspaper:index" %}">Home</a></li>
-      <li><a href="#">Newspapers</a></li>
+      <li><a href="{% url "newspaper:newspaper-list" %}">Newspapers</a></li>
       <li><a href="{% url "newspaper:redactor-list" %}">Redactors</a></li>
       <li><a href="#">Topics</a></li>
     </ul>
@@ -13,7 +13,7 @@
     <!-- User Authentication Links -->
     <ul class="nav" style="margin-top: auto; padding-bottom: 20px;">
       <li class="nav-item">
-          <form method="POST" action="{% url 'logout' %}">
+          <form method="POST" action="{% url "logout" %}">
               {% csrf_token %}
               <button type="submit" class="nav-link btn btn-link" style="padding: 16px 24px; text-align: left; color: #ECF0F1; border: none; background: none; width: 100%;">
                   Logout

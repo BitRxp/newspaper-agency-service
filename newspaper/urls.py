@@ -5,11 +5,15 @@ from .views import (
     RedactorListView,
     RedactorCreateView,
     RedactorDetailView,
-    RedactorsDeleteView
+    RedactorsDeleteView,
+    RedactorUpdateView,
+    NewspaperListView,
+
 )
 
 
 urlpatterns = [
+    # Redactors
     path("", index, name="index"),
     path("redactors/", RedactorListView.as_view(), name="redactor-list"),
     path("redactors/create", RedactorCreateView.as_view(), name="redactor-create"),
@@ -20,6 +24,12 @@ urlpatterns = [
          RedactorsDeleteView.as_view(),
          name="redactor-delete"
          ),
+    path("redactors/<int:pk>/update/",
+         RedactorUpdateView.as_view(),
+         name="redactor-update"
+         ),
+    # Newspapers
+    path("newspapers/", NewspaperListView.as_view(), name="newspaper-list"),
 ]
 
 
