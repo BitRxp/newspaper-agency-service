@@ -4,7 +4,10 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from newspaper.forms import RedactorCreateForm, RedactorUpdateForm
+from newspaper.forms import (RedactorCreateForm,
+                             RedactorUpdateForm,
+                             NewspaperForm
+                             )
 from newspaper.models import Redactor, Newspaper, Topic
 
 
@@ -67,3 +70,9 @@ class NewspaperListView(LoginRequiredMixin, generic.ListView):
     model = Newspaper
     paginate_by = 5
     queryset = Newspaper.objects.all().select_related("topic")
+
+
+class NewspaperCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Newspaper
+    form_class = NewspaperForm
+    success_url = reverse_lazy("newspaper:newspaper-list")
