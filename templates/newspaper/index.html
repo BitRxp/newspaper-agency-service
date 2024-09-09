@@ -1,18 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Newspaper Service Home</h1>
-    <p>Welcome to Best Newspaper Agency Ever!</p>
-    <h2>Dynamic content</h2>
-    <p>The Newspaper Agency service has the following record counts:</p>
-    <ul class="no-bullets">
-        <li><strong>Redactors:</strong> {{ num_redactor }}</li>
-        <li><strong>Topics:</strong> {{ num_topic }}</li>
-        <li><strong>Newspapers:</strong> {{ num_newspaper }}</li>
-    </ul>
+<div class="container mt-5">
+    <h1 class="mb-3">Welcome to the Best Newspaper Agency Ever!</h1>
+  
+    <section class="mt-4">
+        <h2 class="mb-2">Service Overview</h2>
+        <p>Here's a quick snapshot of our current records:</p>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Redactors:</strong> {{ num_redactor }}</li>
+            <li class="list-group-item"><strong>Topics:</strong> {{ num_topic }}</li>
+            <li class="list-group-item"><strong>Newspapers:</strong> {{ num_newspaper }}</li>
+        </ul>
+    </section>
 
-    <p>You have visited this page
-        {{ num_visits }} time{{ num_visits|pluralize }}.
-    </p>
-
+    <p class="mt-4">You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+</div>
 {% endblock %}

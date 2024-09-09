@@ -20,16 +20,17 @@ body {
     height: 100%;
     background: #2C3E50;
     overflow-y: auto;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Тінь для глибини */
     border-right: 1px solid #1A242F;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 0.3s ease; /* Плавний перехід для мобільних версій */
 }
 
 #sidebar header {
     background-color: #1A242F;
-    font-size: 22px;
+    font-size: 24px; /* Збільшено шрифт для більшої чіткості */
     line-height: 60px;
     text-align: center;
 }
@@ -39,6 +40,7 @@ body {
     display: block;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 #sidebar header a:hover {
@@ -61,13 +63,13 @@ body {
     background: none;
     border-bottom: 1px solid #34495E;
     color: #ECF0F1;
-    font-size: 16px;
-    padding: 18px 26px;
+    font-size: 18px; /* Трохи більший шрифт для кращої читабельності */
+    padding: 15px 20px; /* Трохи менші відступи */
     display: block;
     text-decoration: none;
     width: 100%;
     text-align: left;
-    transition: color 0.3s, background-color 0.3s;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 #sidebar .nav a:hover,
@@ -80,12 +82,6 @@ body {
     border: none;
     background: none;
     cursor: pointer;
-}
-
-/* Logout Button Specific Styles */
-#sidebar .nav.logout-nav {
-    margin-top: auto;
-    padding-bottom: 20px;
 }
 
 /* Content Container Styles */
@@ -211,6 +207,7 @@ h1, h2, h3 {
 @media (max-width: 768px) {
     #sidebar {
         width: 200px;
+        box-shadow: none; /* Вимикаємо тінь на мобільних пристроях */
     }
 
     .container-content {
@@ -233,28 +230,35 @@ h1, h2, h3 {
 /* Button Styling */
 .btn-primary {
     background-color: #2980B9;
-    color: white !important; /* Force the text color to be white */
+    color: white !important;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px; /* Збільшено розмір шрифту */
     padding: 12px 24px;
     text-align: center;
     display: inline-block;
     border-radius: 6px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Додаємо тінь для глибини */
 }
 
 .btn-primary:hover {
-    background-color: #34495E; /* Button background color on hover */
-    color: white !important; /* Ensure text color stays white on hover */
+    background-color: #34495E; /* Плавний перехід на hover */
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Більше тіні на hover */
 }
 
-/* "Me" Label Styling */
-.badge-info {
-    background-color: #2980B9; /* Background color for "Me" badge */
-    color: white; /* Text color for "Me" badge */
-    font-size: 0.8em; /* Adjust font size for better readability */
-    padding: 2px 2px; /* Padding for the badge */
-    border-radius: 6px; /* Rounded corners */
+.btn-secondary {
+    background-color: green;
+    color: white !important;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #2980b9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Додамо більше тіні */
 }
 
 /* Section Highlight Hover Effects */
