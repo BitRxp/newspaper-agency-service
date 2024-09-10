@@ -10,7 +10,7 @@
           <p><strong>Published Date:</strong> {{ newspaper.published_date }}</p>
         </div>
         <div class="action-links">
-          <a href="#" class="update-link">Update</a>
+          <a href="{% url "newspaper:newspaper-update" pk=newspaper.id %}" class="update-link">Update</a>
           <a href="#" class="delete-link">Delete</a>
         </div>
       </div>
