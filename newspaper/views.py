@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import generic
 
 from newspaper.forms import (RedactorCreateForm,
@@ -86,3 +86,6 @@ class NewspaperUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Newspaper
     form_class = NewspaperForm
     success_url = reverse_lazy("newspaper:newspaper-list")
+
+    def get_success_url(self):
+        return reverse("newspaper:newspaper-detail", kwargs={"pk": self.object.pk})
