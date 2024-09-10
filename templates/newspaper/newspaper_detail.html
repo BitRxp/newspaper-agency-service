@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="newspaper-layout-container">
+    <div class="main-content">
+      <!-- Верхня частина зі заголовком, датою, кнопками оновлення та видалення -->
+      <div class="header-section d-flex justify-content-between align-items-center">
+        <div class="title-date">
+          <h2>{{ newspaper.title }}</h2>
+          <p><strong>Published Date:</strong> {{ newspaper.published_date }}</p>
+        </div>
+        <div class="action-links">
+          <a href="#" class="update-link">Update</a>
+          <a href="#" class="delete-link">Delete</a>
+        </div>
+      </div>
+
+      <!-- Контент газети -->
+      <div class="content-section mt-4">
+        <h4>Content</h4>
+        <div class="content-pages p-3">
+          <p>{{ newspaper.content }}</p>
+        </div>
+      </div>
+
+      <!-- Список видавців -->
+      <div class="publishers-section mt-5">
+        <h4>Publishers</h4>
+        <ul class="publishers-list list-unstyled">
+          {% for publisher in newspaper.publishers.all %}
+            <li class="publisher-item mb-3 p-2" style="border: 1px solid #dee2e6; border-radius: 5px;">
+              <p><strong>Username:</strong> {{ publisher.username }}</p>
+              <p><strong>Full Name:</strong> {{ publisher.first_name }} {{ publisher.last_name }}</p>
+              <p><strong>Years of Experience:</strong> {{ publisher.years_of_experience }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}

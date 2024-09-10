@@ -1,4 +1,4 @@
-/* General Body Styles */
+/* ================== General Body Styles ================== */
 body {
     padding-top: 20px;
     padding-right: 10px;
@@ -10,7 +10,7 @@ body {
     font-family: 'Merriweather', serif;
 }
 
-/* Sidebar Styles */
+/* ================== Sidebar Styles ================== */
 #sidebar {
     z-index: 1000;
     position: fixed;
@@ -20,17 +20,17 @@ body {
     height: 100%;
     background: #2C3E50;
     overflow-y: auto;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Тінь для глибини */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
     border-right: 1px solid #1A242F;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: all 0.3s ease; /* Плавний перехід для мобільних версій */
+    transition: all 0.3s ease; /* Smooth transition */
 }
 
 #sidebar header {
     background-color: #1A242F;
-    font-size: 24px; /* Збільшено шрифт для більшої чіткості */
+    font-size: 24px; /* Larger font for clarity */
     line-height: 60px;
     text-align: center;
 }
@@ -47,6 +47,7 @@ body {
     color: #FFFFFF;
 }
 
+/* Sidebar navigation styles */
 #sidebar .nav {
     padding-left: 0;
     list-style-type: none;
@@ -58,13 +59,12 @@ body {
     margin-bottom: 10px;
 }
 
-#sidebar .nav a,
-#sidebar .nav button {
+#sidebar .nav a, #sidebar .nav button {
     background: none;
     border-bottom: 1px solid #34495E;
     color: #ECF0F1;
-    font-size: 18px; /* Трохи більший шрифт для кращої читабельності */
-    padding: 15px 20px; /* Трохи менші відступи */
+    font-size: 18px; /* Slightly larger font for better readability */
+    padding: 15px 20px; /* Smaller padding */
     display: block;
     text-decoration: none;
     width: 100%;
@@ -72,8 +72,7 @@ body {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-#sidebar .nav a:hover,
-#sidebar .nav button:hover {
+#sidebar .nav a:hover, #sidebar .nav button:hover {
     background: #1A242F;
     color: #FFFFFF;
 }
@@ -84,7 +83,7 @@ body {
     cursor: pointer;
 }
 
-/* Content Container Styles */
+/* ================== Content Container Styles ================== */
 .container-content {
     color: #2C3E50;
     margin-left: 260px;
@@ -93,17 +92,17 @@ body {
     background: rgba(255, 255, 255, 0.85);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(10px); /* Smooths the background appearance */
+    backdrop-filter: blur(10px); /* For a smoother background appearance */
 }
 
-/* Heading Styles */
+/* ================== Heading Styles ================== */
 h1, h2, h3 {
     font-family: "Merriweather", serif;
     color: #2C3E50;
     font-weight: 700;
 }
 
-/* Link Styles in Content */
+/* ================== Link Styles in Content ================== */
 .container-content a {
     color: #2980B9;
     text-decoration: none;
@@ -117,13 +116,13 @@ h1, h2, h3 {
     border-color: #1F618D;
 }
 
-/* Section Separation Styles */
+/* ================== Section Separation ================== */
 .container-content hr {
     border-top: 1px solid #ddd;
     margin: 20px 0;
 }
 
-/* Redactor Info and Newspaper Section Styling */
+/* ================== Redactor Info and Newspaper Section ================== */
 .redactor-info-container {
     padding: 20px;
     background-color: #fff;
@@ -133,26 +132,43 @@ h1, h2, h3 {
 
 .username-title {
     display: flex;
-    justify-content: space-between; /* Розділяє Username та посилання */
+    justify-content: space-between; /* Separate Username and links */
     align-items: center;
     font-size: 2em;
-    width: 100%; /* Забезпечує повне використання ширини контейнера */
+    width: 100%; /* Full width */
 }
 
 .action-links {
     display: flex;
-    gap: 20px; /* Додає відстань між "Update" та "Delete" */
+    gap: 20px;
 }
 
-.username-title .update-link,
-.username-title .delete-link  {
+.action-links a {
+    font-size: 26px;
+    color: #2980B9;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.action-links .delete-link {
+    color: #E74C3C; /* Червоний для Delete */
+}
+
+.action-links a:hover {
+    border-color: currentColor;
+}
+
+
+/* Button-like links for Update and Delete */
+.username-title .update-link, .username-title .delete-link {
     font-size: 0.8em;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s;
 }
 
-.username-title .delete-link  {
+.username-title .delete-link {
     color: #E74C3C;
 }
 
@@ -168,6 +184,7 @@ h1, h2, h3 {
     border-color: #E74C3C;
 }
 
+/* ================== Newspaper Section Styling ================== */
 .newspapers-section {
     margin-top: 30px;
 }
@@ -196,18 +213,23 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-/* Grid Container for Optional Sections */
+.content-pages {
+    background-color: #dbded2;
+    border-radius: 5px;
+}
+
+/* ================== Grid Container (for flexibility) ================== */
 .d-grid {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-/* Responsive Design Media Queries */
+/* ================== Responsive Design Media Queries ================== */
 @media (max-width: 768px) {
     #sidebar {
         width: 200px;
-        box-shadow: none; /* Вимикаємо тінь на мобільних пристроях */
+        box-shadow: none; /* Disable shadow on mobile */
     }
 
     .container-content {
@@ -227,24 +249,24 @@ h1, h2, h3 {
     }
 }
 
-/* Button Styling */
+/* ================== Button Styling ================== */
 .btn-primary {
     background-color: #2980B9;
     color: white !important;
     font-weight: bold;
-    font-size: 18px; /* Збільшено розмір шрифту */
+    font-size: 18px; /* Increased font size */
     padding: 12px 24px;
     text-align: center;
     display: inline-block;
     border-radius: 6px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Додаємо тінь для глибини */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
 }
 
 .btn-primary:hover {
-    background-color: #34495E; /* Плавний перехід на hover */
+    background-color: #34495E; /* Smooth transition on hover */
     color: white !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Більше тіні на hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* More shadow on hover */
 }
 
 .btn-secondary {
@@ -258,106 +280,59 @@ h1, h2, h3 {
 
 .btn-secondary:hover {
     background-color: #2980b9;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Додамо більше тіні */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* More shadow on hover */
 }
 
-/* Section Highlight Hover Effects */
+/* ================== Section Hover Effects ================== */
 .newspaper-item:hover {
     background-color: #ECF0F1; /* Subtle background change on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Miscellaneous Styling Enhancements */
+/* ================== Miscellaneous Styling Enhancements ================== */
 .text-muted {
     color: #7F8C8D;
 }
 
-/* Centering the Content */
+/* ================== Centering the Content ================== */
 .delete-redactor-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 80vh; /* Centers vertically */
+    min-height: 80vh; /* Vertically centers content */
 }
 
-/* Making the Heading Uppercase and Larger */
+/* ================== Large Heading for Redactor Deletion ================== */
 .delete-redactor-container h1 {
     font-size: 3em;
     font-weight: bold;
-    text-transform: uppercase; /* Makes the text uppercase */
-    color: #E74C3C; /* Optional: color for emphasis */
+    text-transform: uppercase;
+    color: #E74C3C; /* Color for emphasis */
     margin-bottom: 20px;
 }
 
-/* Button Spacing and Alignment */
+/* ================== Button Spacing and Alignment ================== */
 .delete-redactor-container form {
     display: flex;
-    gap: 10px; /* Adds spacing between buttons */
+    gap: 10px; /* Adds space between buttons */
     justify-content: center;
 }
 
-/* Adjust Button Sizes */
 .delete-redactor-container .btn {
     padding: 10px 20px;
     font-size: 1.2em; /* Larger button text */
 }
 
-.btn-secondary {
-    background-color: green;
-    color: white !important;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-secondary:hover {
-    background-color: #2980b9;
-}
-
-/* Grid container (example class) */
-.d-grid {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-/* Centering the login form for unauthorized users */
-.auth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-left: 0;
-}
-
-/* Indentation for content if there is a sidebar */
-.user-authenticated .container-content {
-    margin-left: 260px;
-    padding: 30px;
-    min-height: 100vh;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 8px;
-}
-
-/* Content without a sidebar */
-body:not(.user-authenticated) .container-content {
-    margin-left: 10px;
-    padding: 20px;
-}
-
-/* Pagination */
+/* ================== Pagination Styling ================== */
 .page-item.active .page-link {
     background-color: #2980b9;
 }
 
-/* Indentation between form fields and button */
+/* ================== Form Spacing ================== */
 .update-redactor-form .submit-btn {
     margin-top: 20px;
     padding: 10px 20px;
 }
-
 
