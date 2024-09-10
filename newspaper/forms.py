@@ -1,7 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
-from django_select2.forms import Select2MultipleWidget
 
 from newspaper.models import Redactor, Newspaper
 
