@@ -11,7 +11,7 @@
         </div>
         <div class="action-links">
           <a href="{% url "newspaper:newspaper-update" pk=newspaper.id %}" class="update-link">Update</a>
-          <a href="#" class="delete-link">Delete</a>
+          <a href="{% url "newspaper:newspaper-delete" pk=newspaper.id %}" class="delete-link">Delete</a>
         </div>
       </div>
 

@@ -88,4 +88,12 @@ class NewspaperUpdateView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy("newspaper:newspaper-list")
 
     def get_success_url(self):
-        return reverse("newspaper:newspaper-detail", kwargs={"pk": self.object.pk})
+        return reverse(
+            "newspaper:newspaper-detail",
+            kwargs={"pk": self.object.pk}
+        )
+
+
+class NewspaperDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Newspaper
+    success_url = reverse_lazy("newspaper:newspaper-list")

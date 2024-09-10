@@ -295,7 +295,7 @@ h1, h2, h3 {
 }
 
 /* ================== Centering the Content ================== */
-.delete-redactor-container {
+.delete-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -304,8 +304,9 @@ h1, h2, h3 {
     min-height: 80vh; /* Vertically centers content */
 }
 
+
 /* ================== Large Heading for Redactor Deletion ================== */
-.delete-redactor-container h1 {
+.delete-container h1 {
     font-size: 3em;
     font-weight: bold;
     text-transform: uppercase;
@@ -314,13 +315,13 @@ h1, h2, h3 {
 }
 
 /* ================== Button Spacing and Alignment ================== */
-.delete-redactor-container form {
+.delete-container form {
     display: flex;
     gap: 10px; /* Adds space between buttons */
     justify-content: center;
 }
 
-.delete-redactor-container .btn {
+.delete-container .btn {
     padding: 10px 20px;
     font-size: 1.2em; /* Larger button text */
 }
