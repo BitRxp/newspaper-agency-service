@@ -240,7 +240,7 @@ h1, h2, h3 {
 }
 
 .content-pages {
-    background-color: #dbded2;
+    background-color: #FFF3CD;
     border-radius: 5px;
 }
 
@@ -278,6 +278,10 @@ h1, h2, h3 {
 /* ================== Button Styling ================== */
 .btn-custom-update {
     background-color: #2980b9;
+}
+
+.btn-custom-update:hover {
+    background-color: #34495E;
 }
 
 .btn-primary {
