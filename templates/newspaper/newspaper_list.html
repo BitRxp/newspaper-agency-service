@@ -6,7 +6,7 @@
       <h1>Newspaper List</h1>
       <a href="{% url "newspaper:newspaper-create" %}" class="btn btn-primary">Create Newspaper</a>
     </div>
-
+  
     {% if newspaper_list %}
       <table class="table table-bordered mt-4">
         <thead class="thead-dark">
@@ -33,7 +33,7 @@
         <strong>Warning!</strong> There are no newspapers available.
       </div>
     {% endif %}
-  
+
     {% include "includes/pagination.html" %}
   </div>
 {% endblock %}

@@ -83,6 +83,32 @@ body {
     cursor: pointer;
 }
 
+.btn-secondary {
+    background-color: green;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Centering the login form for unauthorized users */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 0;
+}
+
+/* Content without a sidebar */
+body:not(.user-authenticated) .container-content {
+    margin-left: 10px;
+    padding: 20px;
+}
+
 /* ================== Content Container Styles ================== */
 .container-content {
     color: #2C3E50;
@@ -267,15 +293,6 @@ h1, h2, h3 {
     background-color: #34495E; /* Smooth transition on hover */
     color: white !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* More shadow on hover */
-}
-
-.btn-secondary {
-    background-color: green;
-    color: white !important;
-    font-size: 1.2em;
-    padding: 10px 20px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
 }
 
 .btn-secondary:hover {
