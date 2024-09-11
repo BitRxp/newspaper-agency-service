@@ -276,6 +276,10 @@ h1, h2, h3 {
 }
 
 /* ================== Button Styling ================== */
+.btn-custom-update {
+    background-color: #2980b9;
+}
+
 .btn-primary {
     background-color: #2980B9;
     color: white !important;
