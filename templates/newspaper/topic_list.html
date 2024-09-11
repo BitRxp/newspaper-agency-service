@@ -4,7 +4,7 @@
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="mb-0">Topic List</h1>
-        <a href="#" class="btn btn-primary btn-lg">
+        <a href="{% url "newspaper:topic-create" %}" class="btn btn-primary btn-lg">
             Create New Topic
         </a>
     </div>
@@ -30,12 +30,12 @@
                         </a>
                     </td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-custom-update text-white">
+                        <a href="{% url "newspaper:topic-update" pk=topic.id %}" class="btn btn-sm btn-custom-update text-white">
                             Update
                         </a>
                     </td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-danger text-white">
+                        <a href="{% url "newspaper:topic-delete" pk=topic.id %}" class="btn btn-sm btn-danger text-white">
                             Delete
                         </a>
                     </td>

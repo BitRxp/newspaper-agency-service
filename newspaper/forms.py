@@ -2,8 +2,10 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 
-from newspaper.models import Redactor, Newspaper
+from newspaper.models import Redactor, Newspaper, Topic
 
+
+# RedactorForm
 
 class RedactorCreateForm(UserCreationForm):
     years_of_experience = forms.IntegerField(
@@ -43,6 +45,8 @@ class RedactorUpdateForm(forms.ModelForm):
             )
 
 
+# NewspaperForm
+
 class NewspaperForm(forms.ModelForm):
     publishers = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),
@@ -52,4 +56,12 @@ class NewspaperForm(forms.ModelForm):
 
     class Meta:
         model = Newspaper
+        fields = "__all__"
+
+
+# TopicForm
+
+class TopicForm(forms.ModelForm):
+    class Meta:
+        model = Topic
         fields = "__all__"

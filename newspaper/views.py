@@ -6,7 +6,8 @@ from django.views import generic
 
 from newspaper.forms import (RedactorCreateForm,
                              RedactorUpdateForm,
-                             NewspaperForm
+                             NewspaperForm,
+                             TopicForm
                              )
 from newspaper.models import Redactor, Newspaper, Topic
 
@@ -99,6 +100,24 @@ class NewspaperDeleteView(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy("newspaper:newspaper-list")
 
 
+# TopicView
 class TopicListView(LoginRequiredMixin, generic.ListView):
     model = Topic
     paginate_by = 5
+
+
+class TopicCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Topic
+    form_class = TopicForm
+    success_url = reverse_lazy("newspaper:topic-list")
+
+
+class TopicUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Topic
+    form_class = TopicForm
+    success_url = reverse_lazy("newspaper:topic-list")
+
+
+class TopicDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Topic
+    success_url = reverse_lazy("newspaper:topic-list")
