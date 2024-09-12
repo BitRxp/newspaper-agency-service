@@ -1,12 +1,22 @@
+/* ================== Variables ================== */
+:root {
+    --primary-color: #2980B9;
+    --secondary-color: #2C3E50;
+    --hover-color: #34495E;
+    --background-light: #ECF0F1;
+    --background-dark: #1A242F;
+    --text-color: #2C3E50;
+    --error-color: #E74C3C;
+    --warning-color: #FFF3CD;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 /* ================== General Body Styles ================== */
 body {
     padding-top: 20px;
     padding-right: 10px;
-    background-image: url("/static/images/background.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: #2C3E50;
+    background: url("/static/images/background.jpeg") no-repeat center center / cover;
+    color: var(--text-color);
     font-family: 'Merriweather', serif;
 }
 
@@ -18,14 +28,14 @@ body {
     left: -250px;
     width: 250px;
     height: 100%;
-    background: #2C3E50;
+    background: var(--secondary-color);
     overflow-y: auto;
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
-    border-right: 1px solid #1A242F;
+    border-right: 1px solid var(--background-dark);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: all 0.3s ease;
+    transition: left 0.3s ease;
 }
 
 #sidebar.active {
@@ -37,7 +47,7 @@ body {
     top: 5px;
     left: 15px;
     z-index: 1100;
-    background-color: #3498db;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 12px 18px;
@@ -52,11 +62,11 @@ body {
 }
 
 #sidebar header {
-    background-color: #1A242F;
-    font-size: 24px; /* Великий шрифт */
+    background-color: var(--background-dark);
+    font-size: 24px;
     line-height: 60px;
     text-align: center;
-    border-bottom: 1px solid #34495E;
+    border-bottom: 1px solid var(--hover-color);
 }
 
 #sidebar header a {
@@ -68,13 +78,13 @@ body {
 }
 
 #sidebar header a:hover {
-    color: #FFFFFF;
+    color: white;
 }
 
 /* Sidebar navigation styles */
 #sidebar .nav {
-    padding-left: 0;
-    list-style-type: none;
+    padding: 0;
+    list-style: none;
     margin-top: 20px;
 }
 
@@ -85,7 +95,7 @@ body {
 
 #sidebar .nav a, #sidebar .nav button {
     background: none;
-    border-bottom: 1px solid #34495E;
+    border-bottom: 1px solid var(--hover-color);
     color: #ECF0F1;
     font-size: 18px;
     padding: 15px 20px;
@@ -97,8 +107,8 @@ body {
 }
 
 #sidebar .nav a:hover, #sidebar .nav button:hover {
-    background: #34495E;
-    color: #FFFFFF;
+    background: var(--hover-color);
+    color: white;
 }
 
 #sidebar .nav button {
@@ -109,14 +119,14 @@ body {
 
 /* Styles for logout button */
 #sidebar .nav.logout-nav li button {
-    background-color: #2C3E50;
+    background-color: var(--secondary-color);
     color: white;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
 #sidebar .nav.logout-nav li button:hover {
-    background-color: #c0392b;
+    background-color: var(--error-color);
 }
 
 /* Button styles */
@@ -133,13 +143,13 @@ body {
 .btn-secondary:hover {
     background-color: darkgreen;
 }
+
 /* Centering the login form for unauthorized users */
 .auth-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-left: 0;
 }
 
 /* Content without a sidebar */
@@ -150,28 +160,28 @@ body:not(.user-authenticated) .container-content {
 
 /* ================== Content Container Styles ================== */
 .container-content {
-    color: #2C3E50;
+    color: var(--text-color);
     margin-left: 260px;
     padding: 30px;
     min-height: 100vh;
     background: rgba(255, 255, 255, 0.85);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px var(--shadow-color);
     backdrop-filter: blur(10px);
 }
 
 /* ================== Heading Styles ================== */
 h1, h2, h3 {
     font-family: "Merriweather", serif;
-    color: #2C3E50;
+    color: var(--text-color);
     font-weight: 700;
 }
 
 /* ================== Link Styles in Content ================== */
 .container-content a {
-    color: #2980B9;
+    color: var(--primary-color);
     text-decoration: none;
-    border-bottom: 1px solid #2980B9;
+    border-bottom: 1px solid var(--primary-color);
     transition: color 0.3s, border-color 0.3s;
 }
 
@@ -190,9 +200,9 @@ h1, h2, h3 {
 /* ================== Redactor Info and Newspaper Section ================== */
 .redactor-info-container {
     padding: 20px;
-    background-color: #fff;
+    background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px var(--shadow-color);
 }
 
 .username-title {
@@ -200,7 +210,7 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     font-size: 2em;
-    width: 100%; /* Full width */
+    width: 100%;
 }
 
 .action-links {
@@ -210,20 +220,19 @@ h1, h2, h3 {
 
 .action-links a {
     font-size: 26px;
-    color: #2980B9;
+    color: var(--primary-color);
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s;
 }
 
 .action-links .delete-link {
-    color: #E74C3C;
+    color: var(--error-color);
 }
 
 .action-links a:hover {
     border-color: currentColor;
 }
-
 
 /* Button-like links for Update and Delete */
 .username-title .update-link, .username-title .delete-link {
@@ -234,19 +243,19 @@ h1, h2, h3 {
 }
 
 .username-title .delete-link {
-    color: #E74C3C;
+    color: var(--error-color);
 }
 
 .username-title .update-link {
-    color: #2980B9;
+    color: var(--primary-color);
 }
 
 .username-title .update-link:hover {
-    border-color: #2980B9;
+    border-color: var(--primary-color);
 }
 
 .username-title .delete-link:hover {
-    border-color: #E74C3C;
+    border-color: var(--error-color);
 }
 
 /* ================== Newspaper Section Styling ================== */
@@ -256,13 +265,13 @@ h1, h2, h3 {
 
 .newspapers-section h4 {
     font-size: 1.5em;
-    color: #34495E;
+    color: var(--hover-color);
     margin-bottom: 15px;
 }
 
 .newspaper-list {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
 }
 
 .newspaper-item {
@@ -270,16 +279,22 @@ h1, h2, h3 {
     background-color: #F7F9F9;
     padding: 15px;
     border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.newspaper-item:hover {
+    background-color: var(--background-light);
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .no-newspaper-msg {
-    color: #E74C3C;
+    color: var(--error-color);
     font-weight: bold;
 }
 
 .content-pages {
-    background-color: #FFF3CD;
+    background-color: var(--warning-color);
     border-radius: 5px;
 }
 
@@ -294,7 +309,7 @@ h1, h2, h3 {
 @media (max-width: 768px) {
     #sidebar {
         width: 200px;
-        box-shadow: none; /* Disable shadow on mobile */
+        box-shadow: none;
     }
 
     .container-content {
@@ -316,15 +331,15 @@ h1, h2, h3 {
 
 /* ================== Button Styling ================== */
 .btn-custom-update {
-    background-color: #2980b9;
+    background-color: var(--primary-color);
 }
 
 .btn-custom-update:hover {
-    background-color: #34495E;
+    background-color: var(--hover-color);
 }
 
 .btn-primary {
-    background-color: #2980B9;
+    background-color: var(--primary-color);
     color: white !important;
     font-weight: bold;
     font-size: 18px;
@@ -333,32 +348,21 @@ h1, h2, h3 {
     display: inline-block;
     border-radius: 6px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .btn-primary:hover {
-    background-color: #34495E;
+    background-color: var(--hover-color);
     color: white !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 .btn-secondary:hover {
-    background-color: #2980b9;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 /* ================== Section Hover Effects ================== */
-.newspaper-item:hover {
-    background-color: #ECF0F1;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* ================== Miscellaneous Styling Enhancements ================== */
-.text-muted {
-    color: #7F8C8D;
-}
-
-/* ================== Centering the Content ================== */
 .delete-container {
     display: flex;
     flex-direction: column;
@@ -368,17 +372,14 @@ h1, h2, h3 {
     min-height: 80vh;
 }
 
-
-/* ================== Large Heading for Redactor Deletion ================== */
 .delete-container h1 {
     font-size: 3em;
     font-weight: bold;
     text-transform: uppercase;
-    color: #E74C3C;
+    color: var(--error-color);
     margin-bottom: 20px;
 }
 
-/* ================== Button Spacing and Alignment ================== */
 .delete-container form {
     display: flex;
     gap: 10px;
@@ -392,7 +393,7 @@ h1, h2, h3 {
 
 /* ================== Pagination Styling ================== */
 .page-item.active .page-link {
-    background-color: #2980b9;
+    background-color: var(--primary-color);
 }
 
 /* ================== Form Spacing ================== */
@@ -400,4 +401,3 @@ h1, h2, h3 {
     margin-top: 20px;
     padding: 10px 20px;
 }
-
