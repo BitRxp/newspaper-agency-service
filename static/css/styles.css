@@ -13,7 +13,7 @@
 
 /* ================== General Body Styles ================== */
 body {
-    padding-top: 20px;
+    padding-top: 10px;
     padding-right: 10px;
     background: url("/static/images/background.jpeg") no-repeat center center / cover;
     color: var(--text-color);
@@ -44,8 +44,8 @@ body {
 
 #sidebarToggle {
     position: fixed;
-    top: 5px;
-    left: 15px;
+    top: 25px;
+    left: 20px;
     z-index: 1100;
     background-color: var(--primary-color);
     color: white;
@@ -172,7 +172,7 @@ body:not(.user-authenticated) .container-content {
 }
 
 body.sidebar-active .container-content {
-    margin-left: 265px;
+    margin-left: 255px;
 }
 
 /* ================== Heading Styles ================== */
