@@ -23,6 +23,9 @@ class Redactor(AbstractUser):
     def get_absolute_url(self):
         return reverse("newspaper:redactor-detail", args=[str(self.pk)])
 
+    def __str__(self):
+        return self.username
+
 
 class Newspaper(models.Model):
     title = models.CharField(max_length=255)
@@ -38,3 +41,6 @@ class Newspaper(models.Model):
 
     class Meta:
         ordering = ("published_date", )
+
+    def __str__(self):
+        return self.title
