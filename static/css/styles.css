@@ -58,7 +58,7 @@ body {
 }
 
 #sidebar.active + #sidebarToggle {
-    left: 260px;
+    left: 265px;
 }
 
 #sidebar header {
@@ -93,7 +93,8 @@ body {
     margin-bottom: 10px;
 }
 
-#sidebar .nav a, #sidebar .nav button {
+#sidebar .nav a,
+#sidebar .nav button {
     background: none;
     border-bottom: 1px solid var(--hover-color);
     color: #ECF0F1;
@@ -106,7 +107,8 @@ body {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-#sidebar .nav a:hover, #sidebar .nav button:hover {
+#sidebar .nav a:hover,
+#sidebar .nav button:hover {
     background: var(--hover-color);
     color: white;
 }
@@ -172,11 +174,13 @@ body:not(.user-authenticated) .container-content {
 }
 
 body.sidebar-active .container-content {
-    margin-left: 255px;
+    margin-left: 260px;
 }
 
 /* ================== Heading Styles ================== */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: "Merriweather", serif;
     color: var(--text-color);
     font-weight: 700;
@@ -212,6 +216,7 @@ h1, h2, h3 {
 
 .username-title {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     font-size: 2em;
@@ -240,7 +245,8 @@ h1, h2, h3 {
 }
 
 /* Button-like links for Update and Delete */
-.username-title .update-link, .username-title .delete-link {
+.username-title .update-link,
+.username-title .delete-link {
     font-size: 0.8em;
     text-decoration: none;
     border-bottom: 1px solid transparent;
@@ -314,23 +320,47 @@ h1, h2, h3 {
 @media (max-width: 768px) {
     #sidebar {
         width: 200px;
-        box-shadow: none;
+        left: -200px;
     }
 
-    .container-content {
-        margin-left: 210px;
-        padding: 20px;
+    #sidebar.active + #sidebarToggle {
+        left: 210px;
+    }
+
+    body.sidebar-active .container-content {
+        margin-left: 200px;
     }
 }
 
 @media (max-width: 576px) {
     #sidebar {
-        width: 180px;
+        width: 160px;
+        left: -160px;
     }
 
-    .container-content {
-        margin-left: 190px;
-        padding: 20px;
+    #sidebar.active + #sidebarToggle {
+        left: 170px;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+
+    .username-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    body.sidebar-active .container-content {
+        margin-left: 160px;
     }
 }
 
