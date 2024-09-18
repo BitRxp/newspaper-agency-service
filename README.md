@@ -90,6 +90,8 @@ python manage.py test
 ## Demo
 
 link: https://newspaper-agency-service.onrender.com
+Username: test
+Password: test123
 
 Login page:
 ![Demo of the Newspaper Agency Service](
