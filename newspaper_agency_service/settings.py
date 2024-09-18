@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
+import dj_database_url
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -26,7 +27,7 @@ load_dotenv(os.path.join(BASE_DIR, ".env"))
 SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-!br72ib9l_ago230_g2bdxffct$xyay)=kj=*nj))uxqfkol8)")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
@@ -87,6 +88,9 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+db_from_env = dj_database_url.config(default=os.environ.get("DATABASE_URL"), conn_max_age=500)
+DATABASES["default"].update(db_from_env)
 
 
 # Password validation
