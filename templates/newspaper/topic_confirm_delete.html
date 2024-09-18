@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="delete-container">
+    <h1>If you delete a topic, all Newspapers with that topic will also be deleted! Delete topic?</h1>
+    <form action="" method="post">
+      {% csrf_token %}
+
+      <input type="submit" value="Yes" class="btn btn-danger">
+      <a href="{% url "newspaper:topic-list" %}" class="btn btn-secondary">No</a>
+    </form>
+  </div>
+{% endblock %}

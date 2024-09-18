@@ -1,0 +1,25 @@
+{% if user.is_authenticated %}
+<div class="sidebar-container">
+    <div id="sidebar">
+        <header>
+            <a href="{% url 'newspaper:index' %}">Newspaper System</a>
+        </header>
+        <ul class="nav flex-column">
+            <li><a href="{% url "newspaper:index" %}">Home</a></li>
+            <li><a href="{% url "newspaper:newspaper-list" %}">Newspapers</a></li>
+            <li><a href="{% url "newspaper:redactor-list" %}">Redactors</a></li>
+            <li><a href="{% url "newspaper:topic-list" %}">Topics</a></li>
+        </ul>
+        <!-- User Authentication Links -->
+        <ul class="nav flex-column logout-nav">
+            <li>
+                <form method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="nav-link btn btn-link">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <button id="sidebarToggle" class="btn btn-primary">☰</button>
+</div>
+{% endif %}

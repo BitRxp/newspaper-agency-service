@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="mb-0">Topic List</h1>
+        <a href="{% url "newspaper:topic-create" %}" class="btn btn-primary btn-lg">
+            Create New Topic
+        </a>
+    </div>
+
+    {% if topic_list %}
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for topic in topic_list %}
+                <tr>
+                    <td>{{ topic.id }}</td>
+                    <td>
+                        <a href="{{ topic.get_absolute_url }}" class="text-decoration-none text-primary">
+                            {{ topic.name }}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url "newspaper:topic-update" pk=topic.id %}" class="btn btn-sm btn-custom-update text-white">
+                            Update
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url "newspaper:topic-delete" pk=topic.id %}" class="btn btn-sm btn-danger text-white">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% include "includes/pagination.html" %}
+
+    {% else %}
+    <div class="alert alert-warning" role="alert">
+        There are no topics in the service.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="redactor-info-container mt-5">
+    <div class="username-title">
+      <span>Username: {{ redactor.username }}</span>
+      <div class="action-links">
+    <a href="{% url "newspaper:redactor-update" pk=redactor.id %}" class="update-link">Update</a>
+    <a href="{% url "newspaper:redactor-delete" pk=redactor.id %}" class="delete-link">Delete</a>
+  </div>
+    </div>
+
+    <div class="redactor-details">
+      <p><strong>First name:</strong> {{ redactor.first_name }}</p>
+      <p><strong>Last name:</strong> {{ redactor.last_name }}</p>
+      <p><strong>Years of experience:</strong> {{ redactor.years_of_experience }}</p>
+    </div>
+
+    <div class="newspapers-section">
+      <h4>Newspapers</h4>
+      {% if redactor.newspapers.all %}
+        <ul class="newspaper-list">
+          {% for newspaper in redactor.newspapers.all %}
+            <li class="newspaper-item">
+              <p><strong>Title:</strong> {{ newspaper.title }}</p>
+              <p><strong>Topic:</strong> {{ newspaper.topic.name }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="no-newspaper-msg">No newspaper!</p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
